@@ -1,0 +1,21 @@
+{% extends "mypages/sitebase.html" %}
+{% load static %}
+
+{% block title %}
+List of my favourite games/series
+{% endblock %}
+
+{% block content %}
+<h1>My Favourite games/series</h1>
+{% for favegames in game_name %}
+    <p>{{ favegames.gamename }}, {{ favegames.startyear }}<p>
+{% endfor %}
+{% endblock %}
+<form action="/your-name/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+</form>
+{% block endpage %}
+<p style='font-size:15;'>by shaun friend</p>
+{% endblock %}

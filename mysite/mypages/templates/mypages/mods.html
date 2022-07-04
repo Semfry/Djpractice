@@ -1,0 +1,21 @@
+{% extends "mypages/sitebase.html" %}
+{% load static %}
+
+{% block title %}
+My mods
+{% endblock %}
+
+{% block content %}
+<h1>mods I've made/worked on</h1>
+<p>-----------------------------</p>
+{% for modslist in mod_name %}
+<p>{{ modslist.modname }}, {{ modslist.releaseyear }}</p>
+<img src={{ modslist.image.url }}></img>
+<p>Game: {{ modslist.game }}</p>
+<p>Link:</p> <a href={{ modslist.link }}>{{ modslist.link }}</a>
+<p>-----------------------------</p>
+{% endfor %}
+{% endblock %}
+{% block endpage %}
+<p style='font-size:15;'>by shaun friend</p>
+{% endblock %}

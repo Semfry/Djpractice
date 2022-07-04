@@ -1,0 +1,17 @@
+h1 {
+  color: white;
+  font-size: 40;
+}
+
+a {
+  font-size: 20;
+  color: aqua;
+}
+p {
+  color: white;
+  font-size: 25;
+}
+
+body {
+  background: black;
+}
