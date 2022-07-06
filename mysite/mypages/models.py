@@ -16,3 +16,4 @@ class modslist(models.Model):
     image = models.ImageField(upload_to='static/images')
     def __str__(self):
         return self.modname
+    

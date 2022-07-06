@@ -1,10 +1,8 @@
-from datetime import date
-from django.shortcuts import render
-import datetime
-from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.contrib import messages
 
 from .models import favegames, modslist
-from .forms import FavegamesForm
+from .forms import favegamesform, modslistform
 
 # Create your views here.
 
@@ -17,14 +15,17 @@ def modspage(request):
     return render(request, 'mypages/mods.html', context)
 
 def favouritegames(request):
-    gamenames = favegames.objects.all
-    context = {'game_name': gamenames}
     if request.method == 'POST':
-        form = FavegamesForm(request.POST)
-        if form.is_valid():
-            return HttpResponseRedirect('/thanks/')
-    else:
-        form = FavegamesForm()
-    return render(request, 'mypages/favouritegames.html', context, {'FavouriteGames' : form})
+        favegames_form = favegamesform(request.POST, request.FILES)
+        if favegamesform.is_valid():
+            favegamesform.save()
+            messages.success(request, ('Saved successfully!'))
+        else:
+            messages.error(request, ('Error'))
+
+        return redirect("mypages/favouritegames.html")
     
+    favegames_form = favegamesform()
+    gamenames = favegames.objects.all
+    return render(request=request, template_name='mypages/favouritegames.html', context={'favegames_form':favegames_form, 'game_names':gamenames })
 

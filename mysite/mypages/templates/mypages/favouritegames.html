@@ -7,15 +7,17 @@ List of my favourite games/series
 
 {% block content %}
 <h1>My Favourite games/series</h1>
-{% for favegames in game_name %}
+{% for favegames in game_names %}
     <p>{{ favegames.gamename }}, {{ favegames.startyear }}<p>
 {% endfor %}
 {% endblock %}
-<form action="/your-name/" method="post">
+{% block form %}
+<form method="POST">
     {% csrf_token %}
-    {{ form }}
+    {{ favegames_form }}
     <input type="submit" value="Submit">
 </form>
+{% endblock %}
 {% block endpage %}
 <p style='font-size:15;'>by shaun friend</p>
 {% endblock %}
