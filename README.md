@@ -1,1 +1,1 @@
-# Djpractice
+# Django Site Pratice
