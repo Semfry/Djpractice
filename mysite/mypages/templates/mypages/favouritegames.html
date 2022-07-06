@@ -4,7 +4,7 @@
 {% block title %}
 List of my favourite games/series
 {% endblock %}
-
+    
 {% block content %}
 <h1>My Favourite games/series</h1>
 {% for favegames in game_names %}
@@ -12,7 +12,12 @@ List of my favourite games/series
 {% endfor %}
 {% endblock %}
 {% block form %}
-<form method="POST">
+<form method="POST" class='favegfrm'>
+    <style>
+        .favegfrm {
+            color: white;
+        }
+    </style>
     {% csrf_token %}
     {{ favegames_form }}
     <input type="submit" value="Submit">

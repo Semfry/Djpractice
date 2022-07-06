@@ -16,3 +16,8 @@ p {
 body {
   background: black;
 }
+
+label {
+  color: white;
+  font-size: 25;
+}
