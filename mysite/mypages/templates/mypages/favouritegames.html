@@ -4,7 +4,10 @@
 {% block title %}
 List of my favourite games/series
 {% endblock %}
-    
+
+{% block navtop %}
+<a href='http://127.0.0.1:8000/mypages/'>Back to main page</a>
+{% endblock %}
 {% block content %}
 <h1>My Favourite games/series</h1>
 {% for favegames in game_names %}
@@ -22,6 +25,9 @@ List of my favourite games/series
     {{ favegames_form }}
     <input type="submit" value="Submit">
 </form>
+{% endblock %}
+{% block navbot %}
+<a href='http://127.0.0.1:8000/mypages/'>Back to main page</a>
 {% endblock %}
 {% block endpage %}
 <p style='font-size:15;'>by shaun friend</p>

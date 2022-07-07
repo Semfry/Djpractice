@@ -5,6 +5,9 @@
 My mods
 {% endblock %}
 
+{% block navtop %}
+<a href='http://127.0.0.1:8000/mypages/'>Back to main page</a>
+{% endblock %}
 {% block content %}
 <h1>mods I've made/worked on</h1>
 <p>-----------------------------</p>
@@ -27,6 +30,9 @@ My mods
     {{ modslist_form }}
     <input type="submit" value="Submit">
 </form>
+{% endblock %}
+{% block navbot %}
+<a href='http://127.0.0.1:8000/mypages/'>Back to main page</a>
 {% endblock %}
 {% block endpage %}
 <p style='font-size:15;'>by shaun friend</p>
