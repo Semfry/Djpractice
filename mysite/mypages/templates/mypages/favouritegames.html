@@ -5,13 +5,19 @@
 List of my favourite games/series
 {% endblock %}
 
+
 {% block navtop %}
+<p>-----</p>
 <a href='http://127.0.0.1:8000/mypages/'>Back to main page</a>
+<p>-----</p>
 {% endblock %}
+
 {% block content %}
 <h1>My Favourite games/series</h1>
+<p>-----------------------------</p>
 {% for favegames in game_names %}
     <p>{{ favegames.gamename }}, {{ favegames.startyear }}<p>
+<p>-----------------------------</p>
 {% endfor %}
 {% endblock %}
 {% block form %}
@@ -27,8 +33,7 @@ List of my favourite games/series
 </form>
 {% endblock %}
 {% block navbot %}
+<p>-----</p>
 <a href='http://127.0.0.1:8000/mypages/'>Back to main page</a>
-{% endblock %}
-{% block endpage %}
-<p style='font-size:15;'>by shaun friend</p>
+<p>-----</p>
 {% endblock %}
