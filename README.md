@@ -11,3 +11,5 @@ pip install -r requirements.txt
 git commit -m doc
 
 git push
+
+black -l 80 mypages
