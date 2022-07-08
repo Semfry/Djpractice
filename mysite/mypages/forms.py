@@ -1,4 +1,3 @@
-from turtle import color
 from django import forms
 from django.forms import ModelForm, TextInput, DateInput
 from .models import favegames, modslist
