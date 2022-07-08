@@ -8,7 +8,7 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-git commit -m doc
+git commit -m "push message"
 
 git push
 
