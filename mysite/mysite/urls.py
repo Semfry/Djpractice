@@ -20,8 +20,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    
-    path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
-    path('mypages/', include('mypages.urls')),
-] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path("polls/", include("polls.urls")),
+    path("admin/", admin.site.urls),
+    path("mypages/", include("mypages.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

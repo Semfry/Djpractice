@@ -8,16 +8,34 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('mypages', '0003_delete_firstname_delete_lastname'),
+        ("mypages", "0003_delete_firstname_delete_lastname"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='favegames',
+            name="favegames",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('gamename', models.CharField(max_length=100, verbose_name='name of game/series')),
-                ('startyear', models.DateField(verbose_name='release year/start of series')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "gamename",
+                    models.CharField(
+                        max_length=100, verbose_name="name of game/series"
+                    ),
+                ),
+                (
+                    "startyear",
+                    models.DateField(
+                        verbose_name="release year/start of series"
+                    ),
+                ),
             ],
         ),
     ]

@@ -6,12 +6,12 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('mypages', '0006_mods_link'),
+        ("mypages", "0006_mods_link"),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name='mods',
-            new_name='modslist',
+            old_name="mods",
+            new_name="modslist",
         ),
     ]

@@ -7,22 +7,51 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='First_name',
+            name="First_name",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('myfirstname', models.CharField(default='Shaun', max_length=20, verbose_name='first name')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "myfirstname",
+                    models.CharField(
+                        default="Shaun",
+                        max_length=20,
+                        verbose_name="first name",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Last_name',
+            name="Last_name",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('mylastname', models.CharField(default='Friend', max_length=20, verbose_name='last name')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "mylastname",
+                    models.CharField(
+                        default="Friend",
+                        max_length=20,
+                        verbose_name="last name",
+                    ),
+                ),
             ],
         ),
     ]

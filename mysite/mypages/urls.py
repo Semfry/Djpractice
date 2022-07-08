@@ -4,9 +4,9 @@ from django.conf.urls.static import static
 
 from . import views
 
-app_name = 'mypages'
+app_name = "mypages"
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('mods', views.modspage, name='mods'),
-    path('favouritegames', views.favouritegames, name='favouritegames'),
+    path("", views.index, name="index"),
+    path("mods", views.modspage, name="mods"),
+    path("favouritegames", views.favouritegames, name="favouritegames"),
 ]
