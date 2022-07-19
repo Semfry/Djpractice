@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.contrib import messages
-
+from django.http.response import HttpResponse
 from .models import favegames, modslist
 from .forms import favegamesform, modslistform
 
@@ -16,9 +16,11 @@ def modspage(request):
         modslist_form = modslistform(request.POST, request.FILES)
         if modslist_form.is_valid():
             modslist_form.save()
-            messages.success(request, ("Saved successfully!"))
+            modslResp= ['<body style="background-color:black;"><h2 style="color:white;">Mod entry successfully added to list</h3><br /><a href="http://localhost:8000/mypages/favouritegames">Return to list</a>']
+            return HttpResponse(modslResp)
         else:
-            messages.error(request, ("Error"))
+            modslResp = ['<body style="background-color:black;"><h2 style="color:white;">Mod entry was unsuccessful, please verify form entries are valid</h3><br /><a href="http://localhost:8000/mypages/favouritegames">Try again</a>']
+            return HttpResponse(modslResp)
 
     modslist_form = modslistform()
     modsnames = modslist.objects.all
@@ -34,9 +36,11 @@ def favouritegames(request):
         favegames_form = favegamesform(request.POST, request.FILES)
         if favegames_form.is_valid():
             favegames_form.save()
-            messages.success(request, ("Saved successfully!"))
+            favgamesResp= ['<body style="background-color:black;"><h2 style="color:white;">Game entry successfully added to list</h3><br /><a href="http://localhost:8000/mypages/favouritegames">Return to list</a>']
+            return HttpResponse(favgamesResp)
         else:
-            messages.error(request, ("Error"))
+            favgamesResp = ['<body style="background-color:black;"><h2 style="color:white;">Game entry was unsuccessful, please verify form entries are valid</h3><br /><a href="http://localhost:8000/mypages/favouritegames">Try again</a>']
+            return HttpResponse(favgamesResp)
 
     favegames_form = favegamesform()
     gamenames = favegames.objects.all

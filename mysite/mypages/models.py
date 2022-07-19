@@ -1,7 +1,8 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+import datetime
 
 # Create your models here.
-
 
 class favegames(models.Model):
     gamename = models.CharField("name of game/series", max_length=100)
